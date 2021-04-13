@@ -1,17 +1,23 @@
 import NextLink from "next/link"
 import { Badge, Box, Image } from "@chakra-ui/react"
 import React from "react"
+import { Work } from "../store/works";
 
-export function WorkCard() {
-  const property = {
-    imageUrl: "https://bit.ly/2Z4KKcF",
-    imageAlt: "Rear view of modern home with pool",
-    beds: 3,
-    baths: 2,
-    title: "テストプロジェクト",
-    formattedPrice: "$1,900.00",
-    reviewCount: 34,
-    rating: 4,
+type WorkCardProps = Work;
+
+export const WorkCard = ({
+  title,
+  description,
+  technologyStack,
+  imageUrl,
+  imageAlt,
+}: WorkCardProps) => {
+  const Tag = ({ name }: { name: string }) => {
+    return (
+      <Badge borderRadius="full" px="2" mr="2" colorScheme="teal" letterSpacing="wider">
+        {name}
+      </Badge>
+    )
   }
 
   return (
@@ -25,19 +31,13 @@ export function WorkCard() {
         transition="0.2s ease"
         _hover={{ boxShadow: "xl" }}
       >
-        <Image src={property.imageUrl} alt={property.imageAlt} />
+        <Image src={imageUrl ?? ""} alt={imageAlt ?? ""} />
 
         <Box p="6" bg="white">
           <Box d="flex" alignItems="baseline">
-            <Badge borderRadius="full" px="2" mr="2" colorScheme="teal">
-              Next.js
-          </Badge>
-            <Badge borderRadius="full" px="2" mr="2" colorScheme="teal">
-              React.js
-          </Badge>
-            <Badge borderRadius="full" px="2" mr="2" colorScheme="teal">
-              Typescript
-          </Badge>
+            {technologyStack.map(name =>
+              <Tag name={name} />
+            )}
           </Box>
 
           <Box
@@ -47,7 +47,16 @@ export function WorkCard() {
             lineHeight="tight"
             isTruncated
           >
-            {property.title}
+            {title}
+          </Box>
+
+          <Box
+            mt="1"
+            lineHeight="tight"
+            fontSize="small"
+            color="gray.600"
+          >
+            {description}
           </Box>
         </Box>
       </Box>

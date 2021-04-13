@@ -5,6 +5,7 @@ import { Box, Flex, Grid, SimpleGrid, Stack, Text } from "@chakra-ui/react"
 import React, { useEffect } from 'react'
 import { WorkCard } from '../../components/WorkCard'
 import { Container } from '../../components/Container'
+import { workList } from '../../store/works'
 
 const Works = () => {
   const controls = useAnimation()
@@ -26,13 +27,9 @@ const Works = () => {
           Works
         </Text>
         <SimpleGrid columns={3} spacing={10}>
-          <WorkCard />
-          <WorkCard />
-          <WorkCard />
-          <WorkCard />
-          <WorkCard />
-          <WorkCard />
-          <WorkCard />
+          {workList.map(work =>
+            <WorkCard {...work} />
+          )}
         </SimpleGrid>
       </Stack>
     </Container>
