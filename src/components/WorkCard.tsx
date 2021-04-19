@@ -12,7 +12,30 @@ export const WorkCard = ({
   imageUrl,
   imageAlt,
 }: WorkCardProps) => {
+  const getTruncatedTags = () => {
+    const truncatedTags: string[] = [];
+    let letterCount: number = 0;
+
+    technologyStack.forEach(tech => {
+      // TODO: これスマホのデザインにも対応できるか検討
+      if (letterCount < 20) {
+        console.log(tech)
+        truncatedTags.push(tech);
+        letterCount += tech.length;
+      }
+    })
+    return truncatedTags.concat("And more")
+  }
+
   const Tag = ({ name }: { name: string }) => {
+    if (name === "And more") { // TODO: これあんま良くないので治す
+      return (
+        <Badge borderRadius="full" px="2" mr="2" colorScheme="teal" letterSpacing="wider" textColor="teal.600">
+          {name}
+        </Badge>
+      )
+    }
+
     return (
       <Badge borderRadius="full" px="2" mr="2" colorScheme="teal" letterSpacing="wider">
         {name}
@@ -26,16 +49,16 @@ export const WorkCard = ({
         maxW="sm"
         borderRadius="lg"
         overflow="hidden"
-        boxShadow="md"
         cursor="pointer"
         transition="0.2s ease"
+        boxShadow="md"
         _hover={{ boxShadow: "xl" }}
       >
-        <Image src={imageUrl ?? ""} alt={imageAlt ?? ""} />
+        <Image width="100%" height="270px" objectFit="cover" objectPosition="center" src={imageUrl ?? ""} alt={imageAlt ?? ""} />
 
         <Box p="6" bg="white">
           <Box d="flex" alignItems="baseline">
-            {technologyStack.map(name =>
+            {getTruncatedTags().map(name =>
               <Tag name={name} />
             )}
           </Box>
