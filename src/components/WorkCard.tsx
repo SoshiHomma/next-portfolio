@@ -46,6 +46,8 @@ export const WorkCard = ({
   return (
     <NextLink href={`/works/${1}`}>
       <Box
+        alignSelf="start"
+        bg="white"
         maxW="sm"
         borderRadius="lg"
         overflow="hidden"
@@ -54,9 +56,9 @@ export const WorkCard = ({
         boxShadow="md"
         _hover={{ boxShadow: "xl" }}
       >
-        <Image width="100%" height="270px" objectFit="cover" objectPosition="center" src={imageUrl ?? ""} alt={imageAlt ?? ""} />
+        <Image width="100%" maxHeight="350px" objectFit="cover" objectPosition="center" src={imageUrl ?? ""} alt={imageAlt ?? ""} />
 
-        <Box p="6" bg="white">
+        <Box p="6">
           <Box d="flex" alignItems="baseline">
             {getTruncatedTags().map(name =>
               <Tag name={name} />
