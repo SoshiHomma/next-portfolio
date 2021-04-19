@@ -30,7 +30,7 @@ export const WorkCard = ({
   const Tag = ({ name }: { name: string }) => {
     if (name === "And more") { // TODO: これあんま良くないので治す
       return (
-        <Badge borderRadius="full" px="2" mr="2" colorScheme="teal" letterSpacing="wider" textColor="teal.600">
+        <Badge borderRadius="full" px="2" mr="2" colorScheme="teal" letterSpacing="wider" textColor="teal.500">
           {name}
         </Badge>
       )
