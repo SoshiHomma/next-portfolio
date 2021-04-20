@@ -17,7 +17,6 @@ export const workList: Work[] = [
       "Next.js",
       "Typescript",
       "Chakra UI",
-      "Vercel",
     ],
     imageUrl: "https://picsum.photos/800/600",
     imageAlt: null,
@@ -27,10 +26,8 @@ export const workList: Work[] = [
     description: "現在閲覧しているサイトです。",
     technologyStack: [
       "React.js",
-      "Next.js",
-      "Typescript",
-      "Chakra UI",
-      "Vercel",
+      "Java",
+      "Springboot"
     ],
     imageUrl: "https://picsum.photos/1000/600",
     imageAlt: null,
@@ -40,7 +37,6 @@ export const workList: Work[] = [
     description: "現在閲覧しているサイトです。",
     technologyStack: [
       "React.js",
-      "Next.js",
       "Typescript",
       "Chakra UI",
       "Vercel",

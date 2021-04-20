@@ -15,20 +15,23 @@ export const WorkCard = ({
   const getTruncatedTags = () => {
     const truncatedTags: string[] = [];
     let letterCount: number = 0;
+    let moreTagCount: number = 0;
 
     technologyStack.forEach(tech => {
       // TODO: これスマホのデザインにも対応できるか検討
-      if (letterCount < 20) {
-        console.log(tech)
+      if (letterCount < 15) {
         truncatedTags.push(tech);
         letterCount += tech.length;
+      } else {
+        moreTagCount++;
       }
     })
-    return truncatedTags.concat("And more")
+
+    return moreTagCount > 0 ? truncatedTags.concat(`+${moreTagCount} more tags`) : truncatedTags;
   }
 
   const Tag = ({ name }: { name: string }) => {
-    if (name === "And more") { // TODO: これあんま良くないので治す
+    if (name.includes("more tags")) { // TODO: これあんま良くないので治す
       return (
         <Badge borderRadius="full" px="2" mr="2" colorScheme="teal" letterSpacing="wider" textColor="teal.500">
           {name}
