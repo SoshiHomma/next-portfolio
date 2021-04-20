@@ -6,8 +6,10 @@ import React, { useEffect } from 'react'
 import { WorkCard } from '../../components/WorkCard'
 import { Container } from '../../components/Container'
 import { workList } from '../../store/works'
+import { NextPage } from 'next'
+import { Layout } from '../../components/Layout'
 
-const Works = () => {
+const WorkIndexPage: NextPage = () => {
   const controls = useAnimation()
 
   useEffect(() => {
@@ -19,21 +21,25 @@ const Works = () => {
   }, [])
 
   return (
-    <Container
-      bg="gray.200"
-    >
-      <Stack justifyContent="center" my={32}>
-        <Text textAlign="center" fontSize="48" fontWeight="bold" mb={8}>
-          Works
+    <Layout>
+      <Container
+        width="100%"
+        height="100%"
+        bg="gray.200"
+      >
+        <Stack justifyContent="center" my={32}>
+          <Text textAlign="center" fontSize="48" fontWeight="bold" mb={8}>
+            Works
         </Text>
-        <SimpleGrid columns={3} spacing={10}>
-          {workList.map(work =>
-            <WorkCard {...work} />
-          )}
-        </SimpleGrid>
-      </Stack>
-    </Container>
+          <SimpleGrid columns={3} spacing={10}>
+            {workList.map(work =>
+              <WorkCard key={work.id} {...work} />
+            )}
+          </SimpleGrid>
+        </Stack>
+      </Container>
+    </Layout>
   )
 }
 
-export default Works
+export default WorkIndexPage;

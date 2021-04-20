@@ -6,6 +6,7 @@ import { Work } from "../store/works";
 type WorkCardProps = Work;
 
 export const WorkCard = ({
+  slug,
   title,
   description,
   technologyStack,
@@ -47,7 +48,7 @@ export const WorkCard = ({
   }
 
   return (
-    <NextLink href={`/works/${1}`}>
+    <NextLink href={`/works/${slug}`}>
       <Box
         alignSelf="start"
         bg="white"
@@ -63,8 +64,8 @@ export const WorkCard = ({
 
         <Box p="6">
           <Box d="flex" alignItems="baseline">
-            {getTruncatedTags().map(name =>
-              <Tag name={name} />
+            {getTruncatedTags().map((name, idx) =>
+              <Tag key={idx} name={name} />
             )}
           </Box>
 

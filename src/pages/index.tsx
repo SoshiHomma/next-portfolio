@@ -4,8 +4,9 @@ import { Container } from '../components/Container'
 import { motion, useAnimation } from 'framer-motion'
 import { Box, Button, Flex, Stack, Text } from "@chakra-ui/react"
 import React, { useEffect } from 'react'
+import { NextPage } from "next"
 
-const Index = () => {
+const IndexPage: NextPage = () => {
   const controls = useAnimation()
 
   useEffect(() => {
@@ -90,4 +91,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default IndexPage;
