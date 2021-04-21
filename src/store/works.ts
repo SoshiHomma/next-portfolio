@@ -8,6 +8,10 @@ export type Work = {
   technologyStack: string[];
   imageUrl: string | null;
   imageAlt: string | null;
+  images?: string[];
+  links: {
+    github?: string;
+  };
 }
 
 // temporary added
@@ -32,6 +36,15 @@ export const workList: Work[] = [
     ],
     imageUrl: "https://picsum.photos/800/600",
     imageAlt: null,
+    images: [
+      "https://picsum.photos/800/600",
+      "https://picsum.photos/700/600",
+      "https://picsum.photos/500/500",
+      "https://picsum.photos/800/700",
+    ],
+    links: {
+      github: "https://github.com/SoshiHomma/next-portfolio",
+    }
   },
   {
     id: 2,
@@ -45,6 +58,7 @@ export const workList: Work[] = [
     ],
     imageUrl: "https://picsum.photos/1000/600",
     imageAlt: null,
+    links: {},
   },
   {
     id: 3,
@@ -59,6 +73,7 @@ export const workList: Work[] = [
     ],
     imageUrl: "https://picsum.photos/600/600",
     imageAlt: null,
+    links: {},
   },
   {
     id: 4,
@@ -74,5 +89,6 @@ export const workList: Work[] = [
     ],
     imageUrl: "https://picsum.photos/800/400",
     imageAlt: null,
+    links: {},
   },
 ]

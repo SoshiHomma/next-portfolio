@@ -4,6 +4,7 @@ import theme from '../theme'
 import { AppProps } from 'next/app'
 
 import '../styles/global.css'
+import 'react-medium-image-zoom/dist/styles.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
