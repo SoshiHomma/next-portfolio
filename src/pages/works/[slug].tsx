@@ -1,7 +1,5 @@
 
-
-import { motion, useAnimation } from 'framer-motion'
-import { Box, Flex, Grid, HStack, SimpleGrid, Stack, Text, Image, VStack, Badge, GridItem, Link } from "@chakra-ui/react"
+import { Flex, Grid, HStack, SimpleGrid, Text, Image, Badge, GridItem, Link } from "@chakra-ui/react"
 import React from 'react'
 import { Container } from '../../components/Container'
 import { getAllWorks, getWorkBySlug, Work } from '../../store/works'

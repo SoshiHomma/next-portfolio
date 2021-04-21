@@ -1,7 +1,7 @@
 
 
-import { motion, useAnimation } from 'framer-motion'
-import { Box, Flex, Grid, SimpleGrid, Stack, Text } from "@chakra-ui/react"
+import { useAnimation } from 'framer-motion'
+import { SimpleGrid, Stack, Text } from "@chakra-ui/react"
 import React, { useEffect } from 'react'
 import { WorkCard } from '../../components/WorkCard'
 import { Container } from '../../components/Container'
