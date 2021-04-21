@@ -25,7 +25,7 @@ export function getWorkBySlug(slug: string) {
 export const workList: Work[] = [
   {
     id: 1,
-    slug: "portfolio1",
+    slug: "portfolio",
     title: "ポートフォリオ",
     description: "現在閲覧しているサイトです。",
     technologyStack: [
@@ -33,62 +33,18 @@ export const workList: Work[] = [
       "Next.js",
       "Typescript",
       "Chakra UI",
+      "Vercel",
     ],
-    imageUrl: "https://picsum.photos/800/600",
+    imageUrl: "/images/portfolio_1.png",
     imageAlt: null,
     images: [
-      "https://picsum.photos/800/600",
-      "https://picsum.photos/700/600",
-      "https://picsum.photos/500/500",
-      "https://picsum.photos/800/700",
+      "/images/portfolio_1.png",
+      "/images/portfolio_2.png",
+      "/images/portfolio_3.png",
+      "/images/portfolio_4.png",
     ],
     links: {
       github: "https://github.com/SoshiHomma/next-portfolio",
     }
-  },
-  {
-    id: 2,
-    slug: "portfolio2",
-    title: "ポートフォリオ",
-    description: "現在閲覧しているサイトです。",
-    technologyStack: [
-      "React.js",
-      "Java",
-      "Springboot"
-    ],
-    imageUrl: "https://picsum.photos/1000/600",
-    imageAlt: null,
-    links: {},
-  },
-  {
-    id: 3,
-    slug: "portfolio3",
-    title: "ポートフォリオ",
-    description: "現在閲覧しているサイトです。",
-    technologyStack: [
-      "React.js",
-      "Typescript",
-      "Chakra UI",
-      "Vercel",
-    ],
-    imageUrl: "https://picsum.photos/600/600",
-    imageAlt: null,
-    links: {},
-  },
-  {
-    id: 4,
-    slug: "portfolio4",
-    title: "ポートフォリオ",
-    description: "現在閲覧しているサイトです。",
-    technologyStack: [
-      "React.js",
-      "Next.js",
-      "Typescript",
-      "Chakra UI",
-      "Vercel",
-    ],
-    imageUrl: "https://picsum.photos/800/400",
-    imageAlt: null,
-    links: {},
   },
 ]

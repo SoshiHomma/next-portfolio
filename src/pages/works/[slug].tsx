@@ -58,7 +58,7 @@ const WorkPage: NextPage<WorkPageProps> = ({
       <Container
         bg="gray.200"
         width="100%"
-        minHeight="100%"
+        height="100%"
       >
         <Flex flexDirection="column" mt={32} mb={48}>
           <Grid templateColumns="repeat(5, 1fr)" justifyContent="center" mb={32} maxW="container.xl">
@@ -90,18 +90,20 @@ const WorkPage: NextPage<WorkPageProps> = ({
             </GridItem>
           </Grid>
 
-          <Flex flexDirection="column">
-            <Text
-              fontSize="4xl"
-              pb={2}
-              my={8}
-              color="gray.800"
-              style={{ fontFamily: "Noto Sans JP" }}
-              borderBottom="1px"
-              borderColor="gray.400"
-            >
-              Gallery
-            </Text>
+          <Flex flexDirection="column" maxW="container.xl">
+            {images && (
+              <Text
+                fontSize="4xl"
+                pb={2}
+                my={8}
+                color="gray.800"
+                style={{ fontFamily: "Noto Sans JP" }}
+                borderBottom="1px"
+                borderColor="gray.400"
+              >
+                Gallery
+              </Text>
+            )}
 
             <SimpleGrid columns={3} justifyContent="center">
               {images?.map(url =>
