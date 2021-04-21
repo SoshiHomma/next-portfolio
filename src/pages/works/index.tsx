@@ -24,13 +24,13 @@ const WorkIndexPage: NextPage = () => {
     <Layout>
       <Container
         width="100%"
-        height="100%"
+        minHeight="100%"
         bg="gray.200"
       >
         <Stack justifyContent="center" my={32}>
           <Text textAlign="center" fontSize="48" fontWeight="bold" mb={8}>
             Works
-        </Text>
+          </Text>
           <SimpleGrid columns={3} spacing={10}>
             {workList.map(work =>
               <WorkCard key={work.id} {...work} />

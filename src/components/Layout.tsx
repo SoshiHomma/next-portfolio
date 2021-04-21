@@ -16,9 +16,9 @@ export const Layout = ({
       alignItems="center"
       justifyContent="flex-start"
     >
-      <Box width="100%" height="100%">
+      <Flex width="100%" minHeight="100%" flexGrow={1}>
         {children}
-      </Box>
+      </Flex>
       <Footer />
     </Flex>
   )
